@@ -1,0 +1,10 @@
+-- LocalScript (放在 SuperFlingButton 裡)
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local flingEvent = ReplicatedStorage:WaitForChild("SuperFlingEvent")
+local player = Players.LocalPlayer
+
+script.Parent.MouseButton1Click:Connect(function()
+    -- 當按鈕被點擊時，向伺服器發送事件
+    flingEvent:FireServer()
+end)
